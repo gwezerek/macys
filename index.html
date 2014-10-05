@@ -1,0 +1,83 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Everything You Ever Wanted To Know About the Macy's Thanksgiving Day&nbsp;Parade</title>
+	<meta name="viewport" content="width=device-width">
+	<link rel="stylesheet" href="css/site.css">
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+</head>
+<body>
+	<article class="macys-graphic">
+		<div class="header-wrap">
+			<header class="graphic-header">
+				<div class="mobile-logo">
+					<img src="img/fastcompany-dark-txt.svg" alt="FC logo" class="fc-logo-mobile">
+				</div>
+				<h1 class="graphic-title">Everything You Ever Wanted To Know About the Macy's Thanksgiving Day&nbsp;Parade</h1>
+				<div class="inset-container">
+					<img src="img/fastcompany-dark-txt.svg" alt="FC logo" class="fc-logo">
+					<div class="inset-wrap">
+						<h2 class="graphic-dek">Can you find your favorite balloon in our interactive&nbsp;graphic?</h2>
+						<p class="graphic-intro">Floats, Rockettes, Al Roker: Bah, who cares? We watch the Macy's Thanksgiving Day Parade for the giant balloons. In 1927, puppeteer Tony Sarg inflated a rubber Felix the Cat to replace the lions and bears Macy's had previously set loose on the streets of New York. Almost a century later, pop culture's finest still take to the skies every Thanksgiving morning, wowing children across the nation. Get into the holiday spirit with our chart tracking the debut of every pop culture balloon. To find out more about each balloon, just click the icons, or try to guess the characters by clicking the button&nbsp;below. <cite class="graphic-byline-inline">Design and story by Gus&nbsp;Wezerek.</cite></p>
+					</div>
+				</div>
+				<div class="graph-img-wrap">
+					<img src="img/graph-01.svg" alt="tall balloons trend graph" class="graph-img graph-img-1">
+					<img src="img/graph-02.svg" alt="short balloons trend graph" class="graph-img graph-img-2">
+				</div>
+			</header>
+		</div>
+		<div class="graphic-game-wrap">
+			<button class="graphic-game graphic-game-start">Guess the Characters!</button>
+			<button class="graphic-game graphic-game-end">End the Game</button>
+			<p class="graphic-game graphic-byline">Design and story by Gus&nbsp;Wezerek</p>
+		</div>
+
+		<img src="img/fastcompany-dark-txt.svg" alt="FC logo" class="fc-logo-loader">
+		<ul class="balloon-list"></ul>
+		<footer class="macys-footer">
+			<h2 class="footer-hed">A few of Macy's original balloons</h2>
+			<p class="footer-copy">Blue Hippopotamus, Colicky Kid, Fritz the Dachshund, George the Giant Drum Major, Happy Dragon, Harold the Clown/Baseball Player/Police Officer/Fireman, Jerry the Pig, Nantucket Sea Monster, Reddy Red Bird, Terrible Turk, Tiamat the Dragon, Tom-Cat</p>
+		</footer>
+	</article>
+		
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script type="text/template" id="macys-template">
+
+		<li class="balloon-mod" ontouchstart="this.classList.toggle('hover');">
+			<div class="flipper">
+				<div class="balloon-wrap balloon-wrap-front" style="background-image:url('img/<%= url %>');">
+					<h3 class="balloon-year"><%= year %></h3>
+					<% if (fact !== "") { %>
+						<i class="balloon-icon icon"><img src="img/fact-01.svg" alt="fact!" class=""></i>
+					<% } %>
+				</div>
+				<div class="balloon-wrap balloon-wrap-back">
+					<h3 class="game-name"><%= name %></h3>
+					<div class="not-playing-wrap"> 
+						<h3 class="macys-lead-in">First Appearance</h3> 
+						<p class="balloon-back-copy"><%= debut %> (<%= debutYear %>)</p>
+						<% if (fact !== "") { %>
+						    <h3 class="macys-lead-in">Fun Fact</h3> 
+							<p class="balloon-back-copy"><%= fact %></p>
+						<% } %>
+					</div>
+				</div>
+			</div>
+
+			<h2 class="balloon-name"><%= name %></h2>
+			<h2 class="game-difficulty">Difficulty: <%= difficulty %></h2>
+		</li>
+
+	</script>
+	<script src="scripts/main.js"></script>
+
+</body>
+</html>
